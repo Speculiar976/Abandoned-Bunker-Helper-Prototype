@@ -1,0 +1,257 @@
+input {
+  margin-left: 10px;
+}
+
+select {
+  margin-left: 10px;
+}
+
+p {
+  color: white;
+  font-family: Arial;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.background-color {
+  background-color: black;
+}
+
+.master-pad {
+  display: flex;
+  justify-content: center;
+  /* Aligns items on the main axis (horizontally) */
+  align-items: center;
+  /* Aligns items on the cross axis (vertically) */
+  height: 310px;
+  border: gray;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.padding-area1,
+.padding-area2,
+.padding-area3 {
+  background-color: rgba(255, 255, 255, 0.1);
+  height: 300px;
+  width: 300px;
+  border-width: 2px;
+  border-color: red;
+  border-style: solid;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
+  display: inline-block;
+}
+
+.header {
+  color: white;
+  font-size: 40px;
+  text-align: center;
+
+}
+
+.subheader {
+  color: white;
+  font-size: 25px;
+  text-align: center;
+
+}
+
+.padding-title {
+  color: white;
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.enter-pins {
+  font-size: 20px;
+  margin-bottom: 15px;
+
+}
+
+.combinations-title,
+.loot-timer-title,
+.fuse-timer {
+  text-align: center;
+}
+
+.top-align-container {
+  display: flex;
+}
+
+.num1,
+.num2,
+.num3 {
+  font-family: Arial;
+  display: inline-block;
+  width: 100px;
+
+}
+
+.inputs-container {
+  border-color: brown;
+  border-width: 2px;
+  border-style: solid;
+  width: 130px;
+  height: 120px;
+  display: inline-block;
+}
+
+.generat-container {
+  display: flex;
+  justify-content: center;
+}
+
+.combinations-display-container {
+  border-color: blueviolet;
+  border-width: 2px;
+  border-style: solid;
+  display: inline-block;
+  height: 150px;
+  width: 100px;
+}
+
+.generate-combinations {
+  background-color: rgb(64, 149, 64);
+  height: 40px;
+  width: 90px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.generate-combinations:active {
+  background-color: rgb(119, 166, 119);
+}
+
+.loot-timer-display-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.loot-timer-display {
+  background-color: rgba(230, 132, 132, 0.1);
+  width: 80px;
+  height: 40px;
+}
+
+
+.loot-timer-start {
+  background-color: rgb(64, 149, 64);
+  cursor: pointer;
+}
+
+.loot-timer-start:active {
+  background-color: rgb(119, 166, 119);
+}
+
+.loot-timer-reset {
+  background-color: rgb(203, 36, 36);
+  cursor: pointer;
+}
+
+.start-reset-buttons {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.timer-modifiers {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.minus-10 {
+  background-color: rgb(203, 36, 36);
+  cursor: pointer;
+
+}
+
+.minus-10:active {
+  background-color: rgb(209, 107, 107);
+}
+
+.minus-5 {
+  background-color: rgb(203, 36, 36);
+  cursor: pointer;
+
+}
+
+.minus-5:active {
+  background-color: rgb(209, 107, 107);
+}
+
+
+
+
+.plus-10 {
+  background-color: rgb(64, 149, 64);
+  cursor: pointer;
+
+}
+
+.plus-10:active {
+  background-color: rgb(119, 166, 119);
+}
+
+.plus-5 {
+  background-color: rgb(64, 149, 64);
+  cursor: pointer;
+
+}
+
+.plus-5:active {
+  background-color: rgb(119, 166, 119);
+}
+
+.amperage-selector {
+  display: block;
+  width: 200px;
+}
+
+.durability-field {
+  width: 193px;
+}
+
+.calculate-duration-button {
+  background-color: rgb(64, 149, 64);
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.calculate-duration {
+  text-align: center;
+}
+
+.calculate-duration:active {
+  background-color: rgb(119, 166, 119);
+}
+
+.fuse-duration-display-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+
+
+
+.fuse-duration-results-display {
+  background-color: rgba(230, 132, 132, 0.1);
+  width: 80px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+}
+
+.fuse-duration-display-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
