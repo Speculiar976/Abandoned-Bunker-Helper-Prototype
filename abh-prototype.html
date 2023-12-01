@@ -86,6 +86,7 @@
         </div>
         <div class="calculator-results-action-container">
           <button class="fuse-timer-start" id="fuseTimerStart">START</button>
+          <button class="fuse-timer-pause" id="fuseTimerPause">PAUSE</button>
           <button class="fuse-timer-reset" id="fuseTimerReset">RESET</button>
         </div>
       </div>
@@ -216,6 +217,7 @@ var isFuseTimerRunning = false;
 var fuseTimerElement = document.getElementById('calculatorResults');
 var ftPlayed1MinAlert = false;
 var ftPlayed5MinAlert = false;
+var isFuseTimerPaused = false;
 
 document.getElementById('calculateButton').addEventListener('click', function() {
     var ampValue = parseFloat(document.getElementById('ampSelections').value);
@@ -246,6 +248,36 @@ document.getElementById('fuseTimerStart').addEventListener('click', function() {
     }
 });
 
+document.getElementById('fuseTimerPause').addEventListener('click', function() {
+    var pauseButton = document.getElementById('fuseTimerPause');
+    if (isFuseTimerRunning && !isFuseTimerPaused) {
+        clearInterval(fuseTimer);
+        isFuseTimerPaused = true;
+        pauseButton.textContent = 'RESUME';
+    } else if (isFuseTimerRunning && isFuseTimerPaused) {
+        isFuseTimerPaused = false;
+        pauseButton.textContent = 'PAUSE';
+        fuseTimer = setInterval(function() {
+            fuseTime--;
+            updateFuseTimerDisplay();
+
+            if (fuseTime === 60 && !ftPlayed1MinAlert) {
+                ftAlert1Min.play();
+                ftPlayed1MinAlert = true;
+            } else if (fuseTime === 5 * 60 && !ftPlayed5MinAlert) {
+                ftAlert5Min.play();
+                ftPlayed5MinAlert = true;
+            } else if (fuseTime <= 0) {
+                ftAlertComplete.play();
+                clearInterval(fuseTimer);
+                isFuseTimerRunning = false;
+            }
+        }, 1000);
+    }
+});
+
+document.getElementById('fuseTimerReset').addEventListener('click', function() {
+
 document.getElementById('fuseTimerReset').addEventListener('click', function() {
     clearInterval(fuseTimer);
     fuseTime = 0;
@@ -255,11 +287,17 @@ document.getElementById('fuseTimerReset').addEventListener('click', function() {
     ftPlayed5MinAlert = false;
 });
 
+isFuseTimerPaused = false;
+    document.getElementById('fuseTimerPause').textContent = 'PAUSE';
+});
+
 function updateFuseTimerDisplay() {
     var minutes = Math.floor(fuseTime / 60);
     var seconds = fuseTime % 60;
     fuseTimerElement.textContent = pad(minutes) + ':' + pad(seconds);
 }
+
+
 
 // Initialize displays
 updateLootTimerDisplay();

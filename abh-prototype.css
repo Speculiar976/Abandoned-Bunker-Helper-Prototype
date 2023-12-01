@@ -161,6 +161,16 @@
   border-radius: 5px;
 }
 
+.fuse-timer-pause {
+  background-color: rgb(178, 178, 0);
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.fuse-timer-pause:active {
+  background-color: rgb(255, 255, 0);
+}
+
 /* future active RGBA here RED - rgba(222, 104, 104, 0.8)..GREEN - rgba(194, 233, 194, 0.8) */
 
 .loot-timer-reset-button:active,
